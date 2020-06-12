@@ -1,0 +1,93 @@
+section { padding: 0 !important; }
+
+@media only screen and (max-width: 992px) {
+  #search {
+    background-image:url("/static/data/search_icon.png");
+    background-position: 10px 3px;
+    background-size: 25px;
+    background-color: var(--header-font);
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    border-radius: 30px;
+  }
+  .heading { display: none; }
+  .clientContent { width: 100%; height: 100%;}
+  #addClient, #addPersonnel { padding: 1em; }
+    #addClient span, #addPersonnel span { margin-left: auto; }
+  .toggleContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+  }
+    .button {
+      position: relative;
+      top: 50%;
+      width: 8rem;
+      height: 36px;
+      overflow: hidden;
+      background-color: var(--bg-dp06);
+    }
+      .button.b2 {
+        border-radius: 2px;
+      }
+      #toggle .checkbox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+      #toggle .knobs { z-index: 2; }
+      #toggle .layer {
+        width: 100%;
+        background-color: #EBF7FC;
+        transition: 0.3s ease all;
+        z-index: 1;
+      }
+      #toggle .knobs:before {
+        content: 'Client';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 3rem;
+        height: 10px;
+        color: var(--font-primary);
+        font-size: 10px;
+        text-align: center;
+        line-height: 1;
+        padding: 9px 4px;
+        background-color: var(--btn-primary);
+        border-radius: 2px;
+        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+      }
+      #toggle .checkbox:active + .knobs:before { width: 46px; }
+      #toggle .checkbox:checked:active + .knobs:before { margin-left: -26px; }
+      #toggle .checkbox:checked + .knobs:before {
+        content: 'Personnel';
+        left: 4.28rem;
+        background-color: var(--btn-primary);
+      }
+      #toggle .checkbox:checked ~ layer { background-color: #FCEBEB; }
+  #addClientSubmit, #addPersonSubmit { margin: 0 1em 0 auto; }
+}
+
+@media only screen and (min-width: 993px) {
+  .spacerRow, .add, .spacer, #toggle { display: none; }
+  .heading {
+    padding: 0 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  .heading h3 { flex: 1 0 auto; }
+  .clientContent {
+    padding: 1em;
+    background-color: var(--bg-dp02);
+  }
+}

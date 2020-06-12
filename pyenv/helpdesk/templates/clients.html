@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid_client.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_clients.css') }}">
+  <div id="main">
+    <input type="text" id="search" placeholder="Search...">
+    <span class="spacerRow"></span>
+
+    <input type="radio" id="client" class="hide" name="content_tabs" checked="checked">
+    <label for="client">Client</label>
+    <section class="client">
+      <div class="heading">
+        <h3>Clients</h3>
+      </div>
+      <div class="clientContent">
+        Showing Clients
+      </div>
+    </section>
+
+    <input type="radio" id="personnel" class="hide" name="content_tabs">
+    <label for="personnel">Personnel</label>
+    <section class="personnel">
+      <div class="heading">
+        <h3>Personnel</h3>
+      </div>
+      <div class="clientContent">
+       Showing Personnel
+      </div>
+    </section>
+
+    <input type="radio" id="add" class="hide" name="content_tabs">
+    <label for="add">+</label>
+    <section class="add">
+      <div class="heading">
+        <h3>Add a Client / Personnel</h3>
+      </div>
+      <div class="clientContent">
+        <div class="toggleContainer">
+          <div class="button b2" id="toggle">
+            <input type="checkbox" class="checkbox">
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+          </label>
+        </div>
+        <div id="addClient">
+          <!--
+            Clients will have:
+              Name
+              Address(es)
+                Title
+                Suite
+                Street
+                City
+                County
+                State
+                Country
+                Zip code
+              Phone(es)
+                Number
+                Type
+              Active Status
+                Defaults to active
+          -->
+          <div id="AddClientForm">
+            <span class="nameLabel">Client Name:</span>
+            <div class="nameField">
+              <div class="input-field">
+                <input type="text" id="nameField">
+                <label for="nameField">Name</label>
+              </div>
+            </div>
+
+            <span class="addressLabel">Client Address:</span>
+            <div class="spacer"></div>
+            <div class="street1Field">
+              <div class="input-field">
+                <input type="text" id="street1Field">
+                <label for="street1Field">Street Number/Name</label>
+              </div>
+            </div>
+            
+            <div class="street2Field">
+              <div class="input-field">
+                <input type="text" id="street2Field">
+                <label for="street2Field">Suite/Building</label>
+              </div>
+            </div>
+            
+            <div class="cityField">
+              <div class="input-field">
+                <input type="text" id="cityField">
+                <label for="cityField">City</label>
+              </div>
+            </div>
+            
+            <div class="stateField">
+              <div class="input-field">
+                <input type="text" id="stateField">
+                <label for="stateField">State</label>
+              </div>
+            </div>
+            
+            <div class="zipField">
+              <div class="input-field">
+                <input type="text" id="zipField">
+                <label for="zipField">Zip Code</label>
+              </div>
+            </div>
+            
+            <span class="phoneLabel">Client Phone:</span>
+            <div class="phoneField">
+              <div class="input-field">
+                <input type="text" id="clientPhoneField">
+                <label for="clientPhoneField">Phone Number</label>
+              </div>
+            </div>
+            
+            <div class="spacer"></div>
+            <button id="addClientSubmit" type="submit">Submit</button>
+          </div>
+        </div>
+        <div id="addPersonnel" class="hide">
+          <!--
+            Personnel will have:
+              Name
+                First
+                Last
+              Postiion
+              Phone(es)
+                Number
+                Type
+              Email(s)
+                Address
+                Type
+              ParentClient
+                Dropdown from Client List
+                Department
+          -->
+          <div id="addPersonnelForm">
+            <span class="nameLabel">Name:</span>
+            <div class="firstNameField">
+              <div class="input-field">
+                <input type="text" id="firstNameField">
+                <label for="firstNameField">First Name</label>
+              </div>
+            </div>
+            <div class="lastNameField">
+              <div class="input-field">
+                <input type="text" id="lastNameField">
+                <label for="lastNameField">Last Name</label>
+              </div>
+            </div>
+
+            <span class="officeLabel">Organization Info:</span>
+            <div class="clientField">
+              <div class="input-field">
+                <select id="clientField"></select>
+                <label for="clientField">Client</label>
+              </div>
+            </div>
+            <div class="positionField">
+              <div class="input-field">
+                <input type="text" id="positionField">
+                <label for="positionField">Position</label>
+              </div>
+            </div>
+            <div class="deptField">
+              <div class="input-field">
+                <input type="text" id="deptField">
+                <label for="deptField">Department</label>
+              </div>
+            </div>
+
+            <span class="phoneLabel">Phone Number:</span>
+            <div class="phoneTypeField">
+              <div class="input-field">
+                <select id="phoneTypeField"></select>
+                <label for="phoneTypeField">Type</label>
+              </div>
+            </div>
+            <div class="phoneField">
+              <div class="input-field">
+                <input type="text" id="phoneField">
+                <label for="phoneField">Phone Number</label>
+              </div>
+            </div>
+            <div class="extensionField">
+              <div class="input-field">
+                <input type="text" id="extensionField">
+                <label for="extensionField">Ext</label>
+              </div>
+            </div>
+
+            <span class="emailLabel">Email:</span>
+            <div class="emailField">
+              <div class="input-field">
+                <input type="text" id="emailField">
+                <label for="">Email</label>
+              </div>
+            </div>
+
+            <div class="spacer"></div>
+            <button id="addPersonSubmit" type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <input type="radio" id="spacer" class="hide" name="content_tabs" disabled>
+    <label for="spacer"></label>
+    <section class="spacer"></section>
+  </div>
+{% endblock %}

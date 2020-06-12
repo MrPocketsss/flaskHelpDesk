@@ -1,0 +1,103 @@
+/* hamburger icon */
+/* static css */
+#menu {
+  width: 6vw;
+  position: fixed;
+  top: 3vh;
+  left: 3vw;
+  cursor: pointer;
+  margin: auto;
+  z-index: 999;
+}
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: var(--font-primary);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+/* rotate the css */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-5px 4px);
+  transform: rotate(-45deg) translate(-5px, 4px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media only screen and (max-width: 700px) {
+  #menu { display: inline-block; }
+  #navbar {
+    width: 0;
+    height: 100vh;
+    opacity: 0;
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 12vh; 
+    transition: opacity 0.2s ease-out;
+  }
+    #navbar a:link, #navbar a:visited {
+      width: 90%;
+      line-height: 2.5em;
+      display: block;
+      text-align: center;
+      background-color: var(--bg-secondary);
+      color: var(--font-primary);
+      text-decoration: none !important;
+      margin: 1em 0;
+    }
+    #navbar a:hover {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                  linear-gradient(var(--bg-secondary), var(--bg-secondary));
+      transition: 0.6s ease-out;
+    }
+    #navbar a:active {
+      height: 2.5em;
+      width: 90%;
+      background-color: var(--bg-secondary);
+      color: var(--font-primary);
+      border: none;
+      margin: 1em 0;
+      text-decoration: none;
+    }
+    .active {
+      width: 18em !important;
+      opacity: 1 !important;
+    }
+}
+@media only screen and (min-width: 701px) {
+  #menu { display: none; }
+  #navbar {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1em;
+  }
+  #navbar a:link, #navbar a:visited {
+    background: none;
+    border: none;
+    color: var(--font-primary);
+    font-size: 16px;
+    padding: 0.6em 1em;
+    text-decoration: none;
+  }
+  #navbar a:hover {
+    background: rgb(16, 17, 99);
+    transition: 0.6s ease-out;
+  }
+}

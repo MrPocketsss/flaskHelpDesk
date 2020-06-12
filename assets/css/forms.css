@@ -1,0 +1,116 @@
+.input-field {
+  flex: 1 1 auto;
+  padding: 0 1em;
+  position: relative;
+}
+  .input-field input {
+    width: 100%;
+    height: 3em;
+  }
+  .input-field textarea {
+    width: 100%;
+    font-size: 18px;
+    min-height: 2.8em;
+    max-height: 7.7em;
+    flex: 1 1 auto;
+    resize: none;
+  }
+  .input-field input, .input-field textarea {
+    padding-left: 7px;
+    color: var(--font-primary);
+    box-sizing: border-box;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--font-primary);
+  }
+  .input-field input:focus, .input-field textarea:focus {
+    border-bottom: 2px solid var(--form-focus);
+  }
+  .input-field label {
+    position: absolute;
+    top: 12px;
+    left: 22px;
+    color: var(--form-label);
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .input-field input:focus ~ label,
+  .valid ~ label,
+  .invalid ~ label,
+  .filled ~ label {
+    top: -1.6em;
+    left: 22px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .input-field input:focus ~ label,
+  .input-field textarea:focus ~ label,
+  .filled:focus ~ label {
+    color: var(--form-focus);
+  }
+
+  .input-field textarea:not(:focus)::-webkit-scrollbar {
+    display: none;
+  }
+  .input-field textarea:hover::-webkit-scrollbar {
+    display: block;
+  }
+  .valid { border-bottom: 2px solid var(--form-valid) !important; }
+  .invalid { border-bottom: 2px solid var(--form-invalid) !important; }
+  .valid ~ label {
+    color: var(--form-valid);
+  }
+  .invalid ~ label {
+    color: var(--form-invalid);
+  }
+  .filled ~ label {
+    color: var(--form-label);
+  }
+
+  .input-field .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition opacity 0.3s;
+  }
+    .input-field .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    .show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  /* Modify the autocomplete */
+  @-webkit-keyframes autofill {
+    0%, 100% {
+      color: var(--font-primary);
+      background: transparent;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }

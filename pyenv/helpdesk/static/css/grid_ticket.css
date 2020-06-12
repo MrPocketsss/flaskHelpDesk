@@ -1,0 +1,31 @@
+/* grid display for tickets */
+/* main content for medium and smaller screens */
+@media only screen and (max-width: 992px) {
+  #main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 8% 92%;
+    grid-template-areas:
+      "new open all"
+      "cont cont cont";
+  }
+  #main > [for*='new_'] { grid-area: new; }
+  #main > [for*='open_'] { grid-area: open; }
+  #main > [for*='all_'] { grid-area: all; }
+  #main > :checked + label + section { grid-area: cont; z-index: 1; }
+}
+/* main content for large screens */
+@media only screen and (min-width: 993px) {
+  #main {
+    display: grid;
+    grid-template-columns: 40% 58%;
+    grid-template-rows: 40% 58%;
+    grid-gap: 2%;
+    grid-template-areas: 
+      "ntix otix"
+      "ntix atix";
+  }
+  .new_ticket { grid-area: ntix; }
+  .open_ticket { grid-area: otix; }
+  .all_ticket { grid-area: atix; }
+}

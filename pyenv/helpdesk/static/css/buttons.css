@@ -1,0 +1,23 @@
+button {
+  height: 3em;
+  width: 8em;
+  border-radius: 3px;
+  border: none;
+  color: var(--font-primary);
+  background-color: var(--btn-primary);
+}
+.wide {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+#submit {
+  background-color: var(--btn-primary);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+button:focus, button:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              linear-gradient(var(--btn-primary), var(--btn-primary)) !important;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.6) !important;
+}

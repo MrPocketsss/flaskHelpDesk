@@ -1,0 +1,25 @@
+/* header css */
+header {
+  z-index: 2;
+  padding: 1em;
+  background: var(--bg-secondary);
+  color: var(--header-font);
+}
+  header h1 { margin: auto; }
+    header h1 a:link, 
+    header h1 a:visited,
+    header h1 a:hover,
+    header h1 a:active {
+      text-decoration: none;
+      color: var(--header-font);
+    }
+
+@media only screen and (max-width: 570px) {
+  header h1 { font-size: 2em;  margin-left: 12vw; }
+}  
+@media only screen and (max-width: 700px) {
+  header h1 { font-size: 2em;  }
+}
+@media only screen and (min-width: 701px) {
+  header h1 { font-size: 1.6em; transition: 0.3s ease-out; }
+}

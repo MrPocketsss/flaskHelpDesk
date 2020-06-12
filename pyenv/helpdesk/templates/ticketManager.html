@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid_ticket.css') }}">
+<div id="main">
+  <input type="radio" id="new_ticket" class="hide" name="content_tabs" checked="checked">
+  <label for="new_ticket">New Tickets</label>
+  <section class="new_ticket">
+    <div class="row">
+      <div class="input-field">
+        <span class="tooltip">Names should only include letters, hyphens, and periods.</span>
+        <input type="text" id="name" tabindex="1">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-field">
+        <input type="text" id="agency" tabindex="2">
+        <label for="agency">Agency</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <span class="tooltip">Digits only please</span>
+        <input type="phone" id="phone" tabindex="3">
+        <label for="phone">Callback Number</label>          
+      </div>
+      <div class="input-field">
+        <input type="email" id="email" tabindex="4">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <textarea id="problem" tabindex="5"></textarea>
+        <label for="problem">Current Problem</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <textarea id="resolution" tabindex="6"></textarea>
+        <label for="resolution">How Solved?</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <select id="status" tabindex="7">
+          <option value="$"></option>
+          <option value="0">Resolved</option>
+          <option value="1">Unkown</option>
+          <option value="2">Maybe</option>
+          <option value="3">Needs Follow Up</option>
+        </select>
+        <label for="status">Status</label>
+      </div>
+      <div class="input-field">
+        <div class="wide">
+          <button id="submit" tabindex="8">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <input type="radio" id="open_ticket" class="hide" name="content_tabs">
+  <label for="open_ticket">Open Tickets</label>
+  <section class="open_ticket">Show any open tickets</section>
+
+  <input type="radio" id="all_ticket" class="hide" name="content_tabs">
+  <label for="all_ticket">All Tickets</label>
+  <section class="all_ticket">Show everything here</section>
+</div>
+{% endblock content %}

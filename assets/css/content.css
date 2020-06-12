@@ -1,0 +1,51 @@
+main {
+  padding: 2em 1em 1em 1em;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--font-primary);
+}
+main > section {
+  background-color: var(--bg-primary-one);
+  padding: 2em 0 1em 0;
+}
+
+@media only screen and (max-width: 992px) {
+  main > section {
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+    padding: 1em;
+    padding-top: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  main > :checked + label + section {
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    animation: show 0.5s;
+  }
+  main > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  main > label:hover { background-color: var(--bg-primary-one); }
+  main > input:not(checked) + label { background-color: rgba(0, 0, 0, 0.5); }
+  main > input:checked + label { background-color: var(--bg-primary-two); }
+
+  @keyframes show {
+    0%, 20% { opacity: 0; max-height: 0; }
+    100% { opacity: 1; max-height: 100%; }
+  }
+}
+@media only screen and (min-width: 993px) {
+  main > input, main > label { display: none; }
+  main section {
+    box-shadow: -2px -2px 5px 0 var(--light-shadow),
+                 4px 4px 5px 0 var(--dark-shadow);
+  }
+}

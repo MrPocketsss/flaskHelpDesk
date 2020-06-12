@@ -1,0 +1,153 @@
+.input-field {
+  flex: 1 1 auto;
+  padding: 0 1em;
+  position: relative;
+}
+  .input-field input {
+    width: 100%;
+    height: 3em;
+  }
+  .input-field textarea {
+    width: 100%;
+    font-size: 18px;
+    height: 1.5em;
+    flex: 1 1 auto;
+    resize: none;
+    display: block;
+    line-height: 1.2;
+  }
+  .input-field select {
+    width: 100%;
+    font-size: 18px;
+    height: 2em;
+    flex: 1 1 auto;
+  }
+  .input-field select option {
+    background-color: #242424;
+  }
+  .input-field input,
+  .input-field textarea,
+  .input-field select {
+    padding-left: 7px;
+    color: var(--font-primary);
+    box-sizing: border-box;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--font-primary);
+  }
+  .input-field input:focus, .input-field textarea:focus {
+    border-bottom: 2px solid var(--form-focus);
+  }
+  .input-field input + label,
+  .input-field textarea + label,
+  .input-field select + label {
+    position: absolute;
+    left: 22px;
+    color: var(--form-label);
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .input-field input + label {
+    top: 12px;
+  }
+  .input-field textarea + label {
+    top: 0px;
+  }
+  .input-field select + label {
+    top: 10px;
+  }
+
+  .input-field input:focus + label,
+  .input-field select:focus + label,
+  .valid + label,
+  .invalid + label,
+  .filled + label {
+    top: -0.8em !important;
+    left: 22px !important;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .input-field input:focus + label,
+  .input-field textarea:focus + label,
+  .input-field select:focus + label,
+  .filled:focus + label {
+    color: var(--form-focus);
+  }
+
+  .input-field textarea:not(:focus)::-webkit-scrollbar {
+    display: none;
+  }
+  .input-field textarea:hover::-webkit-scrollbar {
+    display: block;
+  }
+  .valid { border-bottom: 2px solid var(--form-valid) !important; }
+  .invalid { border-bottom: 2px solid var(--form-invalid) !important; }
+  .valid + label {
+    color: var(--form-valid) !important;
+  }
+  .invalid + label {
+    color: var(--form-invalid) !important;
+  }
+  .filled + label {
+    color: var(--form-label) !important;
+  }
+
+  .input-field .tooltip {
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+  }
+    .input-field .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    .showTooltip {
+      animation: showTip 2s 1;
+    }
+
+  /* Modify the autocomplete */
+  @keyframes autofill {
+    0%, 100% {
+      color: var(--font-primary);
+      background: transparent;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+    animation-delay: 1s;
+    animation-name: autofill;
+    animation-fill-mode: both;
+  }
+
+  /* animate the tooltip */
+  @keyframes showTip {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

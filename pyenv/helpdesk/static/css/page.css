@@ -1,0 +1,61 @@
+/* Classes representing the colors */
+:root {
+  --header-font: #EEEEEE;
+  --bg-primary-one: rgba(255, 255, 255, 0.4);
+  --bg-primary-two: rgba(255, 255, 255, 0.2);
+  --form-label: #9E9E9E;
+  --form-valid: #4CAF50;
+  --form-focus: #53A39C;
+  --form-invalid: #F44336;
+  --btn-primary: #2196F3;
+}
+.theme-light {
+  --bg-primary: #ABABAB;
+  --bg-secondary: #0F14DF;
+  --bg-tertiary: #AAAEAB;
+  --font-primary: #121212;
+  --font-secondary: #EEEEEE;
+  --light-shadow: rgba(255, 255, 255, 0.6);
+  --dark-shadow: rgba(0, 0, 0, 0.6);
+  --bg-primary-one: rgba(255, 255, 255, 0.4);
+  --bg-primary-two: rgba(255, 255, 255, 0.8);
+}
+.theme-dark {
+  --bg-dp00: #121212;
+  --bg-dp01: rgba(255, 255, 255, 0.05);
+  --bg-dp02: rgba(255, 255, 255, 0.07);
+  --bg-dp03: rgba(255, 255, 255, 0.08);
+  --bg-dp04: rgba(255, 255, 255, 0.09);
+  --bg-dp06: rgba(255, 255, 255, 0.11);
+  --bg-dp08: rgba(255, 255, 255, 0.12);
+  --bg-dp12: rgba(255, 255, 255, 0.14);
+  --bg-dp16: rgba(255, 255, 255, 0.15);
+  --bg-dp24: rgba(255, 255, 255, 0.16);
+  --bg-secondary: #03508f;
+  --bg-tertiary: #767C78;
+  --font-primary: #EEEEEE;
+  --font-secondary: #121212;
+  --light-shadow: rgba(255, 255, 255, 0.6);
+  --dark-shadow: rgba(0, 0, 0, 1);
+}
+
+/* page */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-dp00);
+  color: var(--font-primary);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 2em;
+  justify-content: space-around;
+  align-items: center;
+}

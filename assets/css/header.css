@@ -1,0 +1,22 @@
+header {
+  z-index: 2;
+  padding: 1em;
+  background: var(--bg-secondary);
+  color: var(--header-font);
+  box-shadow: 0 4px 5px 0 black;
+}
+header > h1 { margin: auto 0; }
+header > button {
+  width: 5em;
+  margin: 0 0 0 auto;
+}
+header ul {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-end !important;
+}
+.headerLinksWide { margin: 0 auto; }
+.headerLinkRight { margin-left: auto; }

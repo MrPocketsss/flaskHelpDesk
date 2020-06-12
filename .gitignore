@@ -1,0 +1,4 @@
+.idea
+pyenv/Lib
+pyenv/Scripts
+pyenv/pyvenv.cfg

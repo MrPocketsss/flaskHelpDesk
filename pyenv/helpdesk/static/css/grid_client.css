@@ -1,0 +1,159 @@
+/* grid display for tickets */
+/* main content for medium and smaller screens */
+@media only screen and (max-width: 992px) {
+  #main {
+    display: grid;
+    grid-template-columns: 6rem auto;
+    grid-template-rows: 5% 2% 8% 8% 8% 69%;
+    grid-template-areas:
+      "search       search"
+      "spacerRow    spacerRow"
+      "clientTab    contentSection"
+      "personnelTab contentSection"
+      "addTab       contentSection"
+      "spacer       contentSection";
+  }
+  #search { grid-area: search; }
+  .spacerRow { grid-area: spacerRow; }
+  #main > [for*='client'] { grid-area: clientTab; }
+  #main > [for*='personnel'] { grid-area: personnelTab; }
+  #main > [for*='add'] { grid-area: addTab;}
+  #main > [for*='spacer'] { grid-area: spacer;}
+  #main > :checked + label + section { grid-area: contentSection; z-index: 1; }
+
+  section {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+      "clientContent";
+  }
+  section .clientContent { grid-area: clientContent; }
+}
+
+/* add Form content for small screens */
+@media only screen and (max-width: 700px) {
+  #AddClientForm, #addPersonnelForm {
+    display: grid;
+    grid-row-gap: 1.7em;
+    justify-items: stretch;
+    align-items: end;
+  }
+  #AddClientForm {
+    grid-template-columns: 110px repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+  #addPersonnelForm {
+    grid-template-columns: 130px repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
+    #AddClientForm .nameLabel       { grid-column: 1; grid-row: 1; }
+    #AddClientForm .nameField       { grid-column: 2 / span 2; grid-row: 1; }
+    #AddClientForm .addressLabel    { grid-column: 1; grid-row: 2; }
+    #AddClientForm .street1Field    { grid-column: 2 / span 2; grid-row: 2; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 3; }
+    #AddClientForm .street2Field    { grid-column: 2 / span 2; grid-row: 3; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 4; }
+    #AddClientForm .cityField       { grid-column: 2 / span 2; grid-row: 4; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 5; }
+    #AddClientForm .stateField      { grid-column: 2; grid-row: 5; }
+    #AddClientForm .zipField        { grid-column: 3; grid-row: 5; }
+    #AddClientForm .phoneLabel      { grid-column: 1; grid-row: 6; }
+    #AddClientForm .phoneField      { grid-column: 2 / span 2; grid-row: 6; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 7; }
+    #AddClientForm #addClientSubmit { grid-column: 2 / span 2; grid-row: 7; }
+
+    #addPersonnelForm .nameLabel      { grid-column: 1; grid-row: 1; }
+    #addPersonnelForm .firstNameField { grid-column: 2 / span 3; grid-row: 1; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 2; }
+    #addPersonnelForm .lastNameField  { grid-column: 2 / span 3; grid-row: 2; }
+    #addPersonnelForm .officeLabel    { grid-column: 1; grid-row: 3; }
+    #addPersonnelForm .clientField    { grid-column: 2 / span 3; grid-row: 3; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 4; }
+    #addPersonnelForm .positionField  { grid-column: 2 / span 3; grid-row: 4; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 5; }
+    #addPersonnelForm .deptField      { grid-column: 2 / span 3; grid-row: 5; }
+    #addPersonnelForm .phoneLabel     { grid-column: 1; grid-row: 6; }
+    #addPersonnelForm .phoneTypeField { grid-column: 2 / span 3; grid-row: 6; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 7; }
+    #addPersonnelForm .phoneField     { grid-column: 2 / span 2; grid-row: 7; }
+    #addPersonnelForm .extensionField { grid-column: 4; grid-row: 7; }
+    #addPersonnelForm .emailLabel     { grid-column: 1; grid-row: 8; }
+    #addPersonnelForm .emailField     { grid-column: 2 / span 3; grid-row: 8; }
+    #addPersonnelForm .spacer         { grid-column: 1; grid-row: 9; }
+    #addPersonnelForm #addPersonSubmit{ grid-column: 2 / span 3; grid-row: 9; }
+}
+
+/* add Form content for medium screens */
+@media only screen and (min-width: 701px) and (max-width: 992px) {
+  
+  #AddClientForm {
+    display: grid;
+    grid-template-columns: 110px repeat(11, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 2em;
+    justify-items: stretch;
+    align-items: end;
+  }
+    #AddClientForm .nameLabel       { grid-column: 1; grid-row: 1; }
+    #AddClientForm .nameField       { grid-column: 2 / span 11; grid-row: 1; }
+    #AddClientForm .addressLabel    { grid-column: 1; grid-row: 2; }
+    #AddClientForm .spacer          { grid-column: 1; grid-row: 3; }
+    #AddClientForm .street1Field    { grid-column: 2 / span 6; grid-row: 2; }
+    #AddClientForm .street2Field    { grid-column: 8 / span 6; grid-row: 2; }
+    #AddClientForm .cityField       { grid-column: 2 / span 5; grid-row: 3; }
+    #AddClientForm .stateField      { grid-column: 7 / span 2; grid-row: 3; }
+    #AddClientForm .zipField        { grid-column: 9 / span 4; grid-row: 3; }
+    #AddClientForm .phoneLabel      { grid-column: 1; grid-row: 4; }
+    #AddClientForm .phoneField      { grid-column: 2 / span 11; grid-row: 4; }
+    #AddClientForm .spacer          { grid-column: 1 / span 8; grid-row: 5; }
+    #AddClientForm #addClientSubmit { grid-column: 9 / span 4; grid-row: 5; }
+  
+  #addPersonnelForm {
+    display: grid;
+    grid-template-columns: 130px repeat(11, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 2em;
+    justify-items: stretch;
+    align-items: end;
+  }
+    #addPersonnelForm .nameLabel      { grid-column: 1; grid-row: 1; }
+    #addPersonnelForm .firstNameField { grid-column: 2 / span 5; grid-row: 1; }
+    #addPersonnelForm .lastNameField  { grid-column: 7 / span 6; grid-row: 1; }
+    #addPersonnelForm .officeLabel    { grid-column: 1; grid-row: 2; }
+    #addPersonnelForm .clientField    { grid-column: 2 / span 4; grid-row: 2; }
+    #addPersonnelForm .positionField  { grid-column: 6 / span 4; grid-row: 2; }
+    #addPersonnelForm .deptField      { grid-column: 10 / span 3; grid-row: 2; }
+    #addPersonnelForm .phoneLabel     { grid-column: 1; grid-row: 3; }
+    #addPersonnelForm .phoneTypeField { grid-column: 2 / span 4; grid-row: 3; }
+    #addPersonnelForm .phoneField     { grid-column: 6 / span 4; grid-row: 3; }
+    #addPersonnelForm .extensionField { grid-column: 10 / span 3; grid-row: 3; }
+    #addPersonnelForm .emailLabel     { grid-column: 1; grid-row: 4; }
+    #addPersonnelForm .emailField     { grid-column: 2 / span 11; grid-row: 4; }
+    #addPersonnelForm .spacer         { grid-column: 1 / span 8; grid-row: 5; }
+    #addPersonnelForm #addPersonSubmit{ grid-column: 9 / span 4; grid-row: 5; }
+}
+/* main content for large screens */
+@media only screen and (min-width: 993px) {
+  #main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+    grid-gap: 2%;
+    grid-template-areas: 
+      "client personnel";
+  }
+  .clients { grid-area: clients; }
+  .personnel { grid-area: personnel; }
+
+  section {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: 
+      "heading"
+      "content";
+  }
+  section .heading { grid-area: 'heading';}
+  section .clientContent { grid-area: content;}
+}

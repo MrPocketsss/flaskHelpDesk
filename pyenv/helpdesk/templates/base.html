@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid_app.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/content.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/forms.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
+
+    <!-- favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='data/favicon.ico') }}">
+
+      <!-- Title -->
+      {% if title %}
+        <title>Help Desk - {{ title }}</title>
+      {% else %}
+        <title>Help Desk</title>
+      {% endif %}
+  </head>
+  <body>
+    <div id="menu">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <header>
+      <h1><a href="/">Linear Systems: Help Desk</a></h1>
+    </header>
+    <nav id="navbar">
+      <a href="/ticketManager">Tickets</a>
+      <a href="/clients">Clients</a>
+      <a href="#">Knowledge Base</a>
+      <a href="#">Account</a>
+    </nav>
+    <main role="main" id="content">
+      {% block content %}{% endblock %}
+    </main>
+    <!-- Javascript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+  </body>
+</html>
